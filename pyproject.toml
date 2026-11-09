@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mypie"
+version = "1.0.0"
+description = "MyPie AI Harness"
+requires-python = ">=3.10"
+dependencies = [
+    "groq",
+    "openai",
+    "anthropic",
+    "python-dotenv",
+]
+
+[project.scripts]
+mypie = "main:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+py-modules = ["main", "mypie_types"]
+packages = ["providers"]
